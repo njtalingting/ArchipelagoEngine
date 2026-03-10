@@ -1,4 +1,4 @@
-<img src="CRAN Logo (1).png" align="right" height="150" />
+# [![](https://www.r-pkg.org/badges/version/ArchipelagoEngine)](https://cran.r-project.org/package=ArchipelagoEngine) ArchipelagoEngine
 
 [![](https://www.r-pkg.org/badges/version/ArchipelagoEngine)](https://cran.r-project.org/package=ArchipelagoEngine)
 
