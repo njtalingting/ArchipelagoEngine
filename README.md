@@ -17,20 +17,33 @@ You can install the released version of **ArchipelagoEngine** from [CRAN](https:
 
 ```R
 install.packages("ArchipelagoEngine")
-
+```
 ## Quick Start
 The core function, build_archipelago_weight, bridges fragmented networks using optimized KNN logic.
-
+```R
 library(ArchipelagoEngine)
+library(sf)
+library(spdep)
 
-# Load the included Philippine Provincial Map (81 Provinces)
+# Load the benchmark map
 data(raw_data)
 
-# Build archipelagic spatial weights with 100% connectivity
-weights <- build_archipelago_weight(raw_data, k=5)
+# Calculate the new network based on the k=5 logic
+weights <- build_archipelago_weight(raw_data, k = 5)
 
-# Verify connectivity (nc = 1)
-spdep::n.comp.nb(weights$neighbours)$nc
+# Scans the graph to see if any islands are isolated
+# If this returns 1, the computer has verified 100% connectivity
+connectivity_status <- spdep::n.comp.nb(weights$neighbours)$nc
+print(connectivity_status)
+
+# Plot connectivity
+plot(st_geometry(raw_data), border = "lightgrey")
+plot(weights$neighbours, st_coordinates(st_centroid(raw_data)), 
+     add = TRUE, col = "#1E90FF", pch = 19, cex = 0.5, lwd = 0.7)
+
+# Result status
+mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"), 
+      side = 1, line = 1, adj = 0.5, cex = 0.9, font = 1, col = "#2C3E50")
 ```
 ## Research Roadmap
 v0.1.1 (Current): Established topological baselines for fragmented islands.
