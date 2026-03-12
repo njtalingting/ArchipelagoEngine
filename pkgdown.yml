@@ -1,0 +1,9 @@
+pandoc: 3.6.3
+pkgdown: 2.2.0
+pkgdown_sha: ~
+articles:
+  rtl_impact: rtl_impact.html
+last_built: 2026-03-12T04:56Z
+urls:
+  reference: https://njtalingting.github.io/ArchipelagoEngine/reference
+  article: https://njtalingting.github.io/ArchipelagoEngine/articles
