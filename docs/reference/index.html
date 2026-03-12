@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Package Index • ArchipelagoEngine</title>
+    <title>Reference • ArchipelagoEngine</title>
     
     <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script>
     <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
@@ -14,114 +14,132 @@
     <script src="../pkgdown.js"></script>
 
     <style>
-        /* Dark Blue Professional Theme - Matching Article UI */
-        :root { --brand-blue: #002147; --soft-gray: #f8f9fa; }
-        body { padding-top: 100px; line-height: 1.8; color: #2d3436; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        /* Matches the "Articles" page UI exactly */
+        :root { --brand-blue: #002147; --link-blue: #007bff; }
+        body { padding-top: 90px; line-height: 1.6; color: #333; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         
-        /* Navbar Branding */
+        /* Navbar Branding - Dark Navy from Photo 2 */
         .bg-primary { background-color: var(--brand-blue) !important; }
-        .navbar { box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-bottom: none !important; }
-        .nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 500; }
-        .nav-link.active { color: #ffffff !important; position: relative; }
-        .nav-link.active::after { content: ''; position: absolute; width: 80%; height: 2px; bottom: 0; left: 10%; background: #fff; }
+        .navbar { box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-bottom: none !important; padding: 0.8rem 0; }
+        .navbar-brand { font-size: 1.5rem; letter-spacing: -0.5px; }
+        .nav-link { color: rgba(255,255,255,0.8) !important; font-weight: 500; font-size: 0.95rem; margin-left: 1rem; }
+        .nav-link.active { color: #ffffff !important; border-bottom: 2px solid #ffffff; }
 
-        /* Page Headers */
-        h1, h2 { color: var(--brand-blue); font-weight: 700; }
-        .page-header { border-bottom: 3px solid #f0f2f5; padding-bottom: 1.5rem; margin-bottom: 3rem; }
-        .math-italic { font-style: italic; font-family: "Times New Roman", serif; font-weight: 600; }
-
-        /* Reference Index Layout */
-        .section-title { margin-top: 4rem; margin-bottom: 1rem; border-left: 5px solid var(--brand-blue); padding-left: 15px; }
-        .section-desc { color: #636e72; margin-bottom: 2rem; font-style: italic; font-size: 0.95rem; }
-
-        .ref-index-container dl { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+        /* Typography */
+        h1 { color: var(--brand-blue); font-weight: 800; font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .page-header { border-bottom: 1px solid #eee; padding-bottom: 2rem; margin-bottom: 3rem; }
         
-        /* Card UI Polish */
-        .ref-item { transition: transform 0.2s ease, box-shadow 0.2s ease; border: 1px solid #e1e4e8; border-radius: 8px; overflow: hidden; background: #fff; }
-        .ref-item:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,33,71,0.08); border-color: var(--brand-blue); }
-        
-        dt { padding: 1.25rem; background: var(--soft-gray); border-bottom: 1px solid #e1e4e8; }
-        dd { padding: 1.25rem; margin-bottom: 0; min-height: 80px; font-size: 0.9rem; color: #4b5563; }
-        
-        .ref-index-container a { font-family: 'SFMono-Regular', Menlo, monospace; font-weight: 700; color: var(--brand-blue); text-decoration: none; font-size: 1rem; }
+        /* Section Styling */
+        .section-title { margin-top: 3rem; font-weight: 700; color: #333; }
+        .section-desc { color: #666; margin-bottom: 1.5rem; font-size: 1.1rem; }
 
-        /* Sidebar UI */
-        aside#sidebar .card { border: none; background: #fdfdfd; border-left: 4px solid var(--brand-blue) !important; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        #toc ul li a { color: #636e72; transition: color 0.2s; }
-        #toc ul li a:hover { color: var(--brand-blue); }
+        /* Reference Links - Matching the blue list style in photo */
+        .ref-index-container dl { margin-top: 1rem; }
+        .ref-item { 
+            border: 1px solid #eef0f2; 
+            border-radius: 10px; 
+            padding: 1.5rem; 
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none !important;
+        }
+        .ref-item:hover { background-color: #fcfdfe; border-color: var(--link-blue); }
+        
+        .ref-item dt { margin-bottom: 0; }
+        .ref-item a { 
+            font-size: 1.15rem; 
+            font-weight: 600; 
+            color: var(--link-blue) !important; 
+            font-family: -apple-system, sans-serif; 
+        }
+        .ref-item::after { 
+            content: '\f054'; 
+            font-family: 'Font Awesome 6 Free'; 
+            font-weight: 900; 
+            color: #ccc;
+            font-size: 0.8rem;
+        }
+        
+        /* Sidebar - Matching the exact "Maintainer" box from photo 2 */
+        .maintainer-card { 
+            border: none; 
+            background: #f8f9fa; 
+            border-left: 4px solid var(--brand-blue) !important; 
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+        .maintainer-label { text-transform: uppercase; font-size: 0.75rem; font-weight: 700; color: #777; letter-spacing: 1px; }
+        .maintainer-name { font-weight: 700; color: #222; margin-top: 0.5rem; font-size: 1.1rem; }
+        .maintainer-spec { font-size: 0.85rem; color: #444; line-height: 1.4; margin-top: 0.5rem; }
+        .maintainer-sub { font-style: italic; font-size: 0.8rem; color: #888; }
 
-        footer { background-color: var(--soft-gray); border-top: 1px solid #e1e4e8; padding: 4rem 0; margin-top: 6rem; }
+        footer { border-top: 1px solid #eee; padding: 3rem 0; margin-top: 5rem; color: #777; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" aria-label="Site navigation">
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
         <div class="container">
-            <a class="navbar-brand fw-bold me-2" href="../index.html">ArchipelagoEngine</a>
-            <small class="nav-text text-white-50 me-auto">0.1.1</small>
+            <a class="navbar-brand fw-bold" href="../index.html">ArchipelagoEngine <span class="fw-light opacity-50 ms-2" style="font-size: 0.9rem;">v0.1.1</span></a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div id="navbar" class="collapse navbar-collapse ms-3">
+            <div id="navbar" class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="active nav-item"><a class="nav-link active" href="../reference/index.html">Reference</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../reference/index.html">Reference</a></li>
                     <li class="nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container template-reference-index">
+    <div class="container">
         <div class="row">
             <main id="main" class="col-md-9">
                 <div class="page-header">
-                    <h1>Package Index</h1>
-                    <p class="lead text-muted">A technical directory of functions optimized for archipelagic spatial processes.</p>
+                    <h1>Reference</h1>
                 </div>
 
                 <div class="ref-index-container">
                     <h2 id="core-engine" class="section-title">Core Engine</h2>
-                    <div class="section-desc">Algorithms for bridging fragmented networks and weight matrix (<span class="math-italic">W</span>) specification.</div>
-                    <dl>
-                        <div class="ref-item">
-                            <dt><code><a href="build_archipelago_weight.html">build_archipelago_weight()</a></code></dt>
-                            <dd>Generate robust spatial weights using optimized KNN for fragmented topographies.</dd>
-                        </div>
-                    </dl>
+                    <p class="section-desc">Functions for bridging fragmented networks and calculating archipelagic spillovers.</p>
+                    
+                    <a href="build_archipelago_weight.html" class="ref-item">
+                        <dt>build_archipelago_weight()</dt>
+                    </a>
 
                     <h2 id="benchmark-data" class="section-title">Benchmark Data</h2>
-                    <div class="section-desc">Philippine-specific spatial datasets used for maritime policy audits.</div>
-                    <dl>
-                        <div class="ref-item">
-                            <dt><code><a href="raw_data.html">raw_data</a></code></dt>
-                            <dd>Spatial data frame for 81 provinces featuring production residuals and connectivity flags.</dd>
-                        </div>
-                    </dl>
+                    <p class="section-desc">Spatial data used for the Philippine case study and policy audits.</p>
+                    
+                    <a href="raw_data.html" class="ref-item">
+                        <dt>raw_data</dt>
+                    </a>
                 </div>
             </main>
 
-            <aside id="sidebar" class="col-md-3">
-                <div class="card p-3">
-                    <h6 class="text-uppercase text-muted small fw-bold mb-3" style="letter-spacing: 0.5px;">On this page</h6>
-                    <nav id="toc">
-                        <ul class="list-unstyled small">
-                            <li class="mb-2"><a href="#core-engine" class="text-decoration-none d-block">Core Engine</a></li>
-                            <li class="mb-0"><a href="#benchmark-data" class="text-decoration-none d-block">Benchmark Data</a></li>
-                        </ul>
-                    </nav>
+            <aside class="col-md-3">
+                <div class="maintainer-card shadow-sm">
+                    <div class="maintainer-label">Maintainer</div>
+                    <div class="maintainer-name">NJ Talingting</div>
+                    <div class="maintainer-spec">
+                        <strong>Spatial Econometrics & Weight Matrix Specification</strong><br>
+                        <span class="maintainer-sub">(Archipelagic Economies)</span>
+                    </div>
                 </div>
             </aside>
         </div>
     </div>
 
-    <footer>
-        <div class="container text-center">
-            <p class="text-dark mb-1"><strong>NJ Talingting</strong></p>
-            <p class="text-muted small mb-0">ArchipelagoEngine • Version 0.1.1</p>
-            <p class="text-muted small">Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+    <footer class="text-center">
+        <div class="container">
+            <p>Developed by NJ Talingting | ninotalingting77@gmail.com</p>
+            <p class="small">Site built with pkgdown 2.2.0.</p>
         </div>
     </footer>
 </body>
