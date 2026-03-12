@@ -1,4 +1,4 @@
-# ArchipelagoEngine <img src="man/figures/badge.png" align="right" height="100" />
+# ArchipelagoEngine <img src="man/figures/ArchipelagoEngine.png" align="right" width="120" style="float: right;" />
 [![](https://www.r-pkg.org/badges/version/ArchipelagoEngine)](https://cran.r-project.org/package=ArchipelagoEngine)
 
 Standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, standard Queen logic leaves 16 provinces (approx. 20%) orphaned, resulting in a fragmented network with only 80.2% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran's $I=0.024$, $p<0.05$ for 'palay' price in the Philippines).
@@ -6,20 +6,13 @@ Standard spatial contiguity models often leave significant portions of island na
 `ArchipelagoEngine` implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at $k=5$ using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented topographies, public health mapping, among other applications.
 
 ## Key Features
-
 <p align="center">
-  <img src="Connectivity_Comparison.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
+  <img src="man/figures/Connectivity_Comparison.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
   <br>
   <b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine k=5 (Right)</i>
 </p>
 
 **100% Connectivity**: Ensures no island units are mathematically "orphaned."
-
-<p align="center">
-  <img src="Spatial_Lag.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
-  <br>
-  <b>Figure 2:</b> <i>Spatial Lag Visualization. Left: Queen Logic results in "Data Gaps" (white areas) due to $nc=23$. Right: ArchipelagoEngine enforces a unified signal flow across all 81 provinces ($nc=1$).</i>
-</p>
 
 **Bias Neutralization**: Reduces Moran’s I to approximately 0 ($p > 0.10$) to stabilize spatial spillovers.
 
@@ -62,19 +55,32 @@ mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"
       side = 1, line = 1, adj = 0.5, cex = 0.9, font = 1, col = "#2C3E50")
 ```
 ## Research Roadmap
-v0.1.1 (Current): Established topological baselines for fragmented islands.
+**v0.1.1 (Current)**: Established topological baselines for fragmented islands.
 
-Active Development: Transitioning from static to dynamic modeling by integrating scraped AIS (Automatic Identification System) satellite data.
+**Active Development**: Transitioning from static to dynamic modeling by integrating scraped AIS (Automatic Identification System) satellite data.
 
-Field Calibration: Currently ground-truthing maritime friction variables against real-world bottlenecks and monsoons at the Port of Cebu.
+**Field Calibration**: Currently ground-truthing maritime friction variables against real-world bottlenecks and monsoons at the Port of Cebu.
 
 ## Documentation
 For a deep dive into the underlying methodology—including applications of Anselin (1988) and LeSage and Pace (2009)—refer to [Package Manual](https://www.r-pkg.org/pkg/ArchipelagoEngine)
 
+## Theoretical Grounding
+The development of ArchipelagoEngine is informed by the missing-neighbor problem 
+in archipelagic topographies. While Anselin (1988) notes that weight matrix misspecification 
+leads to biased estimators, LeSage and Pace (2009) emphasize the necessity of complete 
+spatial weights to capture global spillovers. This engine bridges the gap between these 
+classical theories and fragmented maritime realities.
+
 ## Citation
-If you use this engine in your works, please cite:
+If you've used ArchipelagoEngine in your works, please cite:
 
 Talingting N (2026). _ArchipelagoEngine: Spatial Weight Construction for
   Archipelagic Geographies_. doi:10.32614/CRAN.package.ArchipelagoEngine
   <https://doi.org/10.32614/CRAN.package.ArchipelagoEngine>, R package version
-  0.1.1, <https://CRAN.R-project.org/package=ArchipelagoEngine>.
+  0.1.1, <https://CRAN.R-project.org/package=ArchipelagoEngine
+  
+## References
+Anselin, L. (1988). Spatial Econometrics: Methods and Models.
+LeSage, J., & Pace, R. K. (2009). Introduction to Spatial Econometrics. 
+Bivand, R. S., & Wong, D. W. (2018). "Comparing methods for isolating units of spatial autocorrelation."
+

@@ -1,0 +1,24 @@
+url: https://njtalingting.github.io/ArchipelagoEngine/
+template:
+  bootstrap: 5
+  bootswatch: flatly
+
+navbar:
+  structure:
+    left: [intro, reference, articles]
+    right: [github]
+
+articles:
+  - title: "Policy Case Studies"
+    contents:
+      - rtl_impact
+
+reference:
+  - title: "Core Engine"
+    desc: "Functions for bridging fragmented networks"
+    contents:
+      - build_archipelago_weight
+  - title: "Benchmark Data"
+    desc: "Spatial data used for the Philippine case study"
+    contents:
+      - raw_data
