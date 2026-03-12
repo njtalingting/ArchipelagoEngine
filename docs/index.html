@@ -15,13 +15,15 @@
     <script src="pkgdown.js"></script>
     
     <style>
-        body { padding-top: 80px; line-height: 1.6; color: #333; }
-        .navbar { border-bottom: 1px solid #e5e5e5; }
+        body { padding-top: 80px; line-height: 1.6; color: #333; background-color: #fff; }
+        .navbar { border-bottom: 1px solid #e5e5e5; box-shadow: 0 2px 4px rgba(0,0,0,.05); }
         .page-header { margin-top: 0; border-bottom: 2px solid #f5f5f5; padding-bottom: 20px; margin-bottom: 30px; }
-        pre { background: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px solid #e9ecef; }
-        code { color: #d63384; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
-        .img-center-cap { text-align: center; margin: 2rem 0; }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px solid #e9ecef; overflow-x: auto; }
+        code { color: #d63384; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.9em; }
+        .img-center-cap { text-align: center; margin: 2rem 0; background: #fafafa; padding: 20px; border-radius: 8px; }
         .section { margin-bottom: 3rem; }
+        /* Italicize coefficients specifically */
+        .coeff { font-style: italic; font-family: "Times New Roman", serif; }
     </style>
 </head>
 <body>
@@ -29,6 +31,9 @@
         <div class="container">
             <a class="navbar-brand me-2" href="index.html">ArchipelagoEngine</a>
             <small class="nav-text text-white-50 me-auto">0.1.1</small>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
@@ -47,101 +52,64 @@
 
                 <p><a href="https://cran.r-project.org/package=ArchipelagoEngine"><img src="https://www.r-pkg.org/badges/version/ArchipelagoEngine" alt="CRAN Status"></a></p>
 
-                <p>Standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, standard Queen logic leaves 16 provinces (approx. 20%) orphaned, resulting in a fragmented network with only 80.2% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran’s $I = 0.024$, $p < 0.05$ for ‘palay’ price in the Philippines).</p>
+                <p>Standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, standard Queen logic leaves 16 provinces (approx. 20%) orphaned, resulting in a fragmented network with only 80.2% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran’s <span class="coeff">I</span> = 0.024, <span class="coeff">p</span> < 0.05 for ‘palay’ price in the Philippines).</p>
 
-                <p><code>ArchipelagoEngine</code> implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at $k = 5$ using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented topographies, public health mapping, among other applications.</p>
+                <p><code>ArchipelagoEngine</code> implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at <span class="coeff">k</span> = 5 using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented topographies, public health mapping, among other applications.</p>
 
                 <div class="section">
                     <h2>Key Features</h2>
-                    <div class="img-center-cap">
-                        <img src="reference/figures/Connectivity_Comparison.png" alt="ArchipelagoEngine Connectivity Comparison" width="400" class="img-fluid">
-                        <br><b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine k=5 (Right)</i>
+                    <div class="img-center-cap border">
+                        <img src="reference/figures/Connectivity_Comparison.png" alt="ArchipelagoEngine Connectivity Comparison" width="500" class="img-fluid mb-2">
+                        <br><b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine <span class="coeff">k</span>=5 (Right)</i>
                     </div>
                     <ul>
                         <li><strong>100% Connectivity</strong>: Ensures no island units are mathematically “orphaned.”</li>
-                        <li><strong>Bias Neutralization</strong>: Reduces Moran’s $I$ to approximately 0 ($p > 0.10$) to stabilize spatial spillovers.</li>
+                        <li><strong>Bias Neutralization</strong>: Reduces Moran’s <span class="coeff">I</span> to approximately 0 (<span class="coeff">p</span> > 0.10) to stabilize spatial spillovers.</li>
                         <li><strong>Structural Robustness</strong>: Prioritizes structural integrity and randomized residuals over superficial model fit.</li>
                         <li><strong>CRAN Verified</strong>: Fully compatible with standard spatial regression workflows using <code>sf</code> and <code>spdep</code>.</li>
                     </ul>
                 </div>
 
                 <div class="section">
-                    <h2>Installation</h2>
-                    <pre><code>install.packages("ArchipelagoEngine")</code></pre>
-                </div>
-
-                <div class="section">
                     <h2>Quick Start</h2>
-                    <p>The core function, <code>build_archipelago_weight</code>, bridges fragmented networks using optimized KNN logic.</p>
-                    <pre><code>library(ArchipelagoEngine)
+                    <pre><code># Install from CRAN
+install.packages("ArchipelagoEngine")
+
+library(ArchipelagoEngine)
 library(sf)
 library(spdep)
-
-# Load the benchmark map
-data(raw_data)
 
 # Calculate the new network based on the k=5 logic
 weights <- build_archipelago_weight(raw_data, k = 5)
 
-# Scans the graph to see if any islands are isolated
-# If this returns 1, the computer has verified 100% connectivity
+# Verify 100% connectivity
 connectivity_status <- spdep::n.comp.nb(weights$neighbours)$nc
-print(connectivity_status)
-
-# Plot connectivity
-plot(st_geometry(raw_data), border = "lightgrey")
-plot(weights$neighbours, st_coordinates(st_centroid(raw_data)), 
-     add = TRUE, col = "#1E90FF", pch = 19, cex = 0.5, lwd = 0.7)
-
-# Result status
-mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"), 
-      side = 1, line = 1, adj = 0.5, cex = 0.9, font = 1, col = "#2C3E50")</code></pre>
+print(connectivity_status)</code></pre>
                 </div>
 
                 <div class="section">
                     <h2>Research Roadmap</h2>
                     <p><strong>v0.1.1 (Current)</strong>: Established topological baselines for fragmented islands.</p>
                     <p><strong>Active Development</strong>: Transitioning from static to dynamic modeling by integrating scraped AIS (Automatic Identification System) satellite data.</p>
-                    <p><strong>Field Calibration</strong>: Currently ground-truthing maritime friction variables against real-world bottlenecks and monsoons at the Port of Cebu.</p>
-                </div>
-
-                <div class="section">
-                    <h2>Documentation & Theory</h2>
-                    <p>For a deep dive into methodology, refer to the <a href="https://www.r-pkg.org/pkg/ArchipelagoEngine">Package Manual</a>.</p>
-                    <p>The development is informed by the missing-neighbor problem. While Anselin (1988) notes that weight matrix misspecification leads to biased estimators, LeSage and Pace (2009) emphasize the necessity of complete spatial weights to capture global spillovers.</p>
-                </div>
-
-                <div class="section">
-                    <h2>Citation & References</h2>
-                    <p class="small">Talingting N (2026). <em>ArchipelagoEngine: Spatial Weight Construction for Archipelagic Geographies</em>. doi:10.32614/CRAN.package.ArchipelagoEngine.</p>
-                    <hr>
-                    <ul class="small list-unstyled">
-                        <li>Anselin, L. (1988). Spatial Econometrics: Methods and Models.</li>
-                        <li>LeSage, J., & Pace, R. K. (2009). Introduction to Spatial Econometrics.</li>
-                        <li>Bivand, R. S., & Wong, D. W. (2018). "Comparing methods for isolating units of spatial autocorrelation."</li>
-                    </ul>
                 </div>
             </main>
 
             <aside class="col-md-3">
-                <div class="card bg-light">
+                <div class="card shadow-sm">
                     <div class="card-body">
-                        <h5>Links</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="https://cloud.r-project.org/package=ArchipelagoEngine">View on CRAN</a></li>
-                            <li><a href="LICENSE.html">License (MIT)</a></li>
+                        <h5 class="card-title">Project Links</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="https://cloud.r-project.org/package=ArchipelagoEngine" class="text-decoration-none"><i class="fa fa-box me-2"></i>View on CRAN</a></li>
+                            <li><a href="LICENSE.html" class="text-decoration-none"><i class="fa fa-file-contract me-2"></i>License (MIT)</a></li>
                         </ul>
-                        <hr>
-                        <h5>Developers</h5>
-                        <p class="small">NJ Talingting<br>Author, maintainer</p>
                     </div>
                 </div>
             </aside>
         </div>
     </div>
 
-    <footer class="container mt-5 py-3 border-top">
-        <p class="text-center text-muted">Developed by NJ Talingting. Built with pkgdown 2.2.0.</p>
+    <footer class="container mt-5 py-4 border-top text-center text-muted">
+        <p>Developed by <strong>NJ Talingting</strong>. Built with pkgdown 2.2.0.</p>
     </footer>
 </body>
 </html>
