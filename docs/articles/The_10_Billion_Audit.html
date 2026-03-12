@@ -75,8 +75,8 @@
 
                 <section id="introduction">
                     <h2>Introduction: The Problem of Matrix Rank</h2>
-                    <p>In spatial econometrics, the Weight Matrix (<span class="math-italic">W</span>) is the fundamental operator for capturing spillovers. However, in archipelagic topographies like the Philippines, the standard Queen-contiguity operator fails to satisfy the condition of a connected graph.</p>
-                    <p>When <span class="math-italic">nc</span> > 1 (the number of disjoint components), the spatial weights matrix is technically a block-diagonal matrix where certain blocks (isolated provinces like Batanes) have zero probability of interaction. This violates the assumption of a unified spatial process.</p>
+                    <p>In spatial econometrics, the Weight Matrix ($W$) is the fundamental operator for capturing spillovers. However, in archipelagic topographies like the Philippines, the standard Queen-contiguity operator fails to satisfy the condition of a connected graph.</p>
+                    <p>When $nc > 1$ (the number of disjoint components), the spatial weights matrix is technically a block-diagonal matrix where certain blocks (isolated provinces like Batanes) have zero probability of interaction. This violates the assumption of a unified spatial process.</p>
                 </section>
 
                 <section id="diagnostic">
@@ -90,12 +90,12 @@
                     <h3>Connectivity Failure</h3>
                     <p>Under Queen logic, we observed significant fragmentation:</p>
                     <ul>
-                        <li><strong>Isolated Units (<span class="math-italic">n<sub>i</sub></span> = 0):</strong> 16 provinces.</li>
+                        <li><strong>Isolated Units ($n_i = 0$):</strong> 16 provinces.</li>
                         <li><strong>Network Connectivity:</strong> 80.2%.</li>
                         <li><strong>Graph Structure:</strong> 23 disjoint components.</li>
                     </ul>
 
-                    <h3>The Moran's <span class="math-italic">I</span> Paradox</h3>
+                    <h3>The Moran's $I$ Paradox</h3>
                     <p>A well-specified model should yield randomized residuals (white noise). The comparative results are stark:</p>
                     
                     <div class="table-container">
@@ -104,12 +104,12 @@
                                 <tr>
                                     <th>Metric</th>
                                     <th>Queen Model</th>
-                                    <th>KNN (<span class="math-italic">k</span>=5)</th>
+                                    <th>KNN ($k=5$)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Moran's <span class="math-italic">I</span></strong></td>
+                                    <td><strong>Moran's $I$</strong></td>
                                     <td>0.024</td>
                                     <td>-0.001</td>
                                 </tr>
@@ -121,12 +121,12 @@
                             </tbody>
                         </table>
                     </div>
-                    <p>The Queen model's <span class="math-italic">p</span> < 0.05 indicates <strong>systematic predictive bias</strong>. The model is failing to account for maritime trade routes, forcing the error term to absorb the spatial structure.</p>
+                    <p>The Queen model's $p < 0.05$ indicates <strong>systematic predictive bias</strong>. The model is failing to account for maritime trade routes, forcing the error term to absorb the spatial structure.</p>
                 </section>
 
                 <section id="recalibration">
-                    <h2>Recalibration via KNN (<span class="math-italic">k</span>=5)</h2>
-                    <p><code>ArchipelagoEngine</code> solves this by optimizing the parameter <span class="math-italic">k</span>. At <span class="math-italic">k</span>=5, we achieve a singular connected component (<span class="math-italic">nc</span>=1), ensuring that the spatial multiplier effect can flow through the entire archipelago.</p>
+                    <h2>Recalibration via KNN ($k=5$)</h2>
+                    <p><code>ArchipelagoEngine</code> solves this by optimizing the parameter $k$. At $k=5$, we achieve a singular connected component ($nc=1$), ensuring that the spatial multiplier effect can flow through the entire archipelago.</p>
 
                     <pre><code><span class="keyword">library</span>(ArchipelagoEngine)
 <span class="keyword">library</span>(spdep)
@@ -140,11 +140,10 @@ S_knn <- spdep::n.comp.nb(w_knn$neighbours)
                 </section>
 
                 <section id="implications">
-    <h2>Implications</h2>
-    <p>We conclude that Queen-contiguity is invalid for Philippine national policy analysis. Using a fragmented <span class="math-italic">W</span> matrix to distribute 10 billion pesos appropriation results in "geographic exclusion." By enforcing 100% connectivity, we ensure that spatial spillovers—and the resulting policy interventions—are mathematically representative of the entire nation.</p>
-    
-    <p>Furthermore, the transition from a disjoint Queen-matrix to a connected KNN-matrix ensures that the <strong>spectral radius</strong> of $W$ is well-behaved ($\rho(W) = 1$), allowing for stable maximum likelihood estimation of the spatial autoregressive parameter $\lambda$. Specifically, by ensuring a single connected component ($nc = 1$), we guarantee that the Jacobian term $\ln|I - \lambda W|$ in the log-likelihood function is monotonic and well-defined over the feasible range of $\lambda$.</p>
-</section>
+                    <h2>Implications</h2>
+                    <p>We conclude that Queen-contiguity is invalid for Philippine national policy analysis. Using a fragmented $W$ matrix to distribute 10 billion pesos appropriation results in "geographic exclusion." By enforcing 100% connectivity, we ensure that spatial spillovers—and the resulting policy interventions—are mathematically representative of the entire nation.</p>
+                    <p>Furthermore, the transition from a disjoint Queen-matrix to a connected KNN-matrix ensures that the <strong>spectral radius</strong> of $W$ is well-behaved ($\rho(W) = 1$), allowing for stable maximum likelihood estimation of the spatial autoregressive parameter $\lambda$. Specifically, by ensuring a single connected component ($nc = 1$), we guarantee that the Jacobian term $\ln|I - \lambda W|$ in the log-likelihood function is monotonic and well-defined over the feasible range of $\lambda$.</p>
+                </section>
 
                 <section id="references" class="pb-5">
                     <h2>References</h2>
