@@ -1,4 +1,4 @@
-# ArchipelagoEngine <img src="man/figures/ArchipelagoEngine.png" align="right" width="120" style="float: right;" />
+# ArchipelagoEngine <img src="man/figures/badge.png" align="right" width="120" style="float: right;" />
 [![](https://www.r-pkg.org/badges/version/ArchipelagoEngine)](https://cran.r-project.org/package=ArchipelagoEngine)
 
 Standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, standard Queen logic leaves 16 provinces (approx. 20%) orphaned, resulting in a fragmented network with only 80.2% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran's $I=0.024$, $p<0.05$ for 'palay' price in the Philippines).
