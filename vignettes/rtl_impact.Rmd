@@ -8,7 +8,7 @@ output:
     number_sections: true
 vignette: >
   %\VignetteIndexEntry{The 10-Billion Peso Audit: Evaluating Spatial Weight Misspecification}
-  %\VignetteEngine{rmarkdown::render}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 # Introduction: The Problem of Matrix Rank
