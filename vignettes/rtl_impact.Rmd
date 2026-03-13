@@ -28,14 +28,16 @@ When $nc > 1$ (the number of disjoint components), the spatial weights matrix is
 
 # Mathematical Diagnostic of the Queen Model
 
-Using the PHP 10-Billion Rice Competitiveness Enhancement Fund (RCEF) as a case study, we tested the 'palay' price residuals using a Spatial Error Model (SEM):
+We tested the 'palay' price residuals using a Spatial Error Model (SEM):
 
 $$y = X\beta + u, \quad u = \lambda Wu + \epsilon$$
 
 ## Connectivity Failure
 Under Queen logic, we observed:
 * **Isolated Units ($n_i = 0$):** 16 provinces.
+
 * **Network Connectivity:** 80.2%.
+
 * **Graph Structure:** 23 disjoint components.
 
 ## The Moran's I Paradox
@@ -64,7 +66,7 @@ print(S_knn$nc) # National Connectivity must equal 1
 ```
 
 ## Implications
-We conclude that Queen-contiguity is misspecified for Philippine national policy analysis. Using a fragmented $W$ matrix to distribute 10 billion pesos appropriation results in "geographic exclusion." By enforcing 100% connectivity, we ensure that spatial spillovers—and the resulting policy interventions—are mathematically representative of the entire nation.
+We conclude that Queen-contiguity is misspecified for fragmented topographies like the Philippine archipelago. Using a fragmented $W$ matrix results in "geographic exclusion." By enforcing 100% connectivity, we ensure that spatial spillovers are mathematically representative of the entire nation. This recalibration ensures that national-scale econometric models maintain global connectivity, thereby neutralizing the structural bias inherent in disjoint spatial weights and providing a more robust framework for analyzing cross-regional economic trends.
 
 Furthermore, the transition from a disjoint Queen-matrix to a connected KNN-matrix ensures that 
 the **spectral radius** of $W$ is well-behaved ($\rho(W) = 1$), allowing for 
