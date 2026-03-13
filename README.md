@@ -62,9 +62,9 @@ mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"
 **Field Calibration**: Currently ground-truthing maritime friction variables against real-world bottlenecks and monsoons at the Port of Cebu.
 
 ## Documentation
-For a deep dive into the underlying methodology—including applications of Anselin (1988) and LeSage and Pace (2009)—refer to [Package Manual](https://www.r-pkg.org/pkg/ArchipelagoEngine)
+For a deep dive into the underlying methodology—including applications of Anselin (1988) and LeSage and Pace (2009)—refer to [Case Study.l](https://njtalingting.github.io/ArchipelagoEngine/articles/index.html)
 
-## Theoretical Grounding
+## Theoretical Framework
 The development of ArchipelagoEngine is informed by the missing-neighbor problem 
 in archipelagic topographies. While Anselin (1988) notes that weight matrix misspecification 
 leads to biased estimators, LeSage and Pace (2009) emphasize the necessity of complete 
