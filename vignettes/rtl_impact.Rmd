@@ -11,6 +11,13 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+> ### **TL;DR: The "Geographic Exclusion" Bug**
+> * **The Problem:** Standard spatial models "orphan" 16 Philippine provinces (20% of the nation), creating a fragmented 80.2% connectivity that biases economic predictions.
+> * **The Audit:** Using the **PHP 10-Billion RCEF** as a case study, we prove that "Queen-logic" fails to capture maritime spillovers, resulting in statistically significant error bias ($p < 0.05$).
+> * **The Solution:** `ArchipelagoEngine` recalibrates the network to **100% connectivity** ($k=5$), neutralizing spatial bias and ensuring that national policy interventions are mathematically inclusive of the entire archipelago.
+---
+
 # Introduction: The Problem of Matrix Rank
 
 In spatial econometrics, the Weight Matrix ($W$) is the fundamental operator for capturing spillovers. However, in archipelagic topographies like the Philippines, the standard Queen-contiguity operator fails to satisfy the condition of a connected graph.
