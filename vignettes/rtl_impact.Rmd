@@ -1,5 +1,5 @@
 ---
-title: "The 10-Billion Peso Audit: Evaluating Spatial Weight Misspecification"
+title: "Sensitivity Analysis of Spatial Weight Estimation in Archipelagic Econometrics: A Case Study of Localized Rice Price Dynamics"
 author: "NJ Talingting"
 date: "`r Sys.Date()`"
 output: 
@@ -7,14 +7,14 @@ output:
     toc: true
     number_sections: true
 vignette: >
-  %\VignetteIndexEntry{The 10-Billion Peso Audit: Evaluating Spatial Weight Misspecification}
+  %\VignetteIndexEntry{Sensitivity Analysis of Spatial Weight Estimation in Archipelagic Econometrics}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 > ### **TL;DR: The "Geographic Exclusion" Bug**
 > * **The Problem:** Standard spatial models "orphan" 16 Philippine provinces (20% of the nation), creating a fragmented 80.2% connectivity that biases economic predictions.
-> * **The Audit:** Using the **PHP 10-Billion RCEF fund** of the Rice Tariffication Law as a case study, we prove that "Queen-logic" fails to capture maritime spillovers, resulting in statistically significant error bias ($p < 0.05$).
+> * **The Methodology:** Using the localized 'palay' price of the Philippines from 2016-2025, we prove that "Queen-logic" fails to capture maritime spillovers, resulting in statistically significant error bias ($p < 0.05$).
 > * **The Solution:** `ArchipelagoEngine` recalibrates the network to **100% connectivity** ($k=5$), neutralizing spatial bias and ensuring that national policy interventions are mathematically inclusive of the entire archipelago. Such connectivity can be scaled to other archipelagic nations.
 
 ---
@@ -64,7 +64,7 @@ print(S_knn$nc) # National Connectivity must equal 1
 ```
 
 ## Implications
-We conclude that Queen-contiguity is invalid for Philippine national policy analysis. Using a fragmented $W$ matrix to distribute 10 billion pesos appropriation results in "geographic exclusion." By enforcing 100% connectivity, we ensure that spatial spillovers—and the resulting policy interventions—are mathematically representative of the entire nation.
+We conclude that Queen-contiguity is misspecified for Philippine national policy analysis. Using a fragmented $W$ matrix to distribute 10 billion pesos appropriation results in "geographic exclusion." By enforcing 100% connectivity, we ensure that spatial spillovers—and the resulting policy interventions—are mathematically representative of the entire nation.
 
 Furthermore, the transition from a disjoint Queen-matrix to a connected KNN-matrix ensures that 
 the **spectral radius** of $W$ is well-behaved ($\rho(W) = 1$), allowing for 
