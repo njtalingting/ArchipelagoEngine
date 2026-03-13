@@ -13,6 +13,10 @@ Description: Implements specialized K-Nearest Neighbor (KNN) logic to
     100% network connectivity, neutralizing spatial bias and 
     enabling robust econometric inference. Methodology follows 
     Anselin (1988, ISBN:9024737354) and LeSage and Pace (2009) <doi:10.1201/9781420064254>.
+URL: https://njtalingting.github.io/ArchipelagoEngine/,
+    https://www.linkedin.com/in/njtalingting/
+X-schema.org-keywords: spatial-econometrics, archipelago, connectivity, Rcpp, 
+    philippines, maritime-logistics, island
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
