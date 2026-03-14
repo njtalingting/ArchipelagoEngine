@@ -1,5 +1,5 @@
 ---
-title: "Sensitivity Analysis of Spatial Weight Estimation in Archipelagic Econometrics: A Case Study of Localized Rice Price Dynamics"
+title: "Addressing a Decade-Old 'Continental Fallacy' in Spatial Econometrics"
 author: "NJ Talingting"
 date: "`r Sys.Date()`"
 output: 
@@ -7,14 +7,14 @@ output:
     toc: true
     number_sections: true
 vignette: >
-  %\VignetteIndexEntry{Sensitivity Analysis of Spatial Weight Estimation in Archipelagic Econometrics}
+  %\VignetteIndexEntry{Addressing a Decade-Old 'Continental Fallacy' in Spatial Econometrics}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 > ### **TL;DR: The "Geographic Exclusion" Bug**
-> * **The Problem:** Standard spatial models "orphan" 16 Philippine provinces (20% of the nation), creating a fragmented 80.2% connectivity that biases economic predictions.
-> * **The Methodology:** Using the localized 'palay' price of the Philippines from 2016-2025, we prove that "Queen-logic" fails to capture maritime spillovers, resulting in statistically significant error bias ($p < 0.05$).
+> * **The Problem:** For decades, standard spatial models have been systematically excluding provinces in island nations. In the Philippines, they "orphan" 16 Philippine provinces (20% of the nation), creating a fragmented 80.2% connectivity that biases economic predictions.
+> * **The Methodology:** Using a localized 'palay' price of the Philippines from 2016-2025, we prove that "Queen-logic" fails to capture maritime spillovers, resulting in statistically significant error bias ($p < 0.05$).
 > * **The Solution:** `ArchipelagoEngine` recalibrates the network to **100% connectivity** ($k=5$), neutralizing spatial bias and ensuring that national policy interventions are mathematically inclusive of the entire archipelago. Such connectivity can be scaled to other archipelagic nations.
 
 ---
@@ -33,7 +33,15 @@ We tested the 'palay' price residuals using a Spatial Error Model (SEM):
 $$y = X\beta + u, \quad u = \lambda Wu + \epsilon$$
 
 ## Connectivity Failure
-Under Queen logic, we observed:
+
+<p align="center">
+  <img src="man/figures/Connectivity_Comparison.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
+  <br>
+  <b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine k=5 (Right)</i>
+</p>
+
+Under Queen contiguity, we observed:
+
 * **Isolated Units ($n_i = 0$):** 16 provinces.
 
 * **Network Connectivity:** 80.2%.
