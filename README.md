@@ -88,3 +88,4 @@ Anselin, L. (1988). Spatial Econometrics: Methods and Models.
 LeSage, J., & Pace, R. K. (2009). Introduction to Spatial Econometrics. 
 Bivand, R. S., & Wong, D. W. (2018). "Comparing methods for isolating units of spatial autocorrelation."
 
+<a rel="me" href="https://fosstodon.org/@njtalingting" style="display:none;">Mastodon</a>
