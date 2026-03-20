@@ -1,10 +1,10 @@
 Package: ArchipelagoEngine
 Title: Spatial Weight Construction for Archipelagic Geographies
 Version: 0.1.1
-Authors@R: 
-    person("NJ", "Talingting", 
-           email = "ninotalingting77@gmail.com", 
-           role = c("aut", "cre"))
+Authors@R: person("NJ", "Talingting", 
+                  email = "ninotalingting77@gmail.com",
+                  role = c("aut", "cre"),
+                  comment = c(ORCID = "0009-0003-7245-874X"))
 Description: Implements specialized K-Nearest Neighbor (KNN) logic to 
     address the unique challenges of spatial modeling in archipelagic 
     environments. Standard contiguity models often leave significant 
