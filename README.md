@@ -67,18 +67,12 @@ mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"
 ## Documentation
 For a deep dive into the underlying methodology— including applications of Anselin (1988) and LeSage and Pace (2009)— refer to [Case Study.](https://njtalingting.r-universe.dev/articles/ArchipelagoEngine/rtl_impact.html)
 
-## Theoretical Framework
-The development of ArchipelagoEngine is informed by the missing-neighbor problem 
-in archipelagic topographies. While Anselin (1988) notes that weight matrix misspecification 
-leads to biased estimators, LeSage and Pace (2009) emphasize the necessity of complete 
-spatial weights to capture global spillovers. This engine bridges the gap between these 
-classical theories and fragmented maritime realities.
+## Acknowledgment
+The development of `{ArchipelagoEngine}` is guided by the #rspatial community to ensure it meets the rigorous standards of archipelagic spatial statistics. 
 
-## Citation
-To cite package ‘ArchipelagoEngine’ in publications use:
+* **Roger Bivand**: For the foundational recommendation to integrate this engine with the broader R-spatial ecosystem (specifically `{sfislands}` and `spdep`).
+* **Barry Rowlingson**: For the inspiration to bridge pure geometric adjacency with real-world transport logic through `{roroph}`.
 
-Talingting N (2026). ArchipelagoEngine: Spatial Weight Construction for Archipelagic Geographies. R package version 0.1.1, https://github.com/njtalingting/archipelagoengine.
-  
 ## References
 Anselin, L. (1988). *Spatial Econometrics: Methods and Models*.
 
