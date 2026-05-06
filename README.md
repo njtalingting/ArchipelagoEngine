@@ -10,8 +10,6 @@
 [![R-CMD-check](https://github.com/njtalingting/ArchipelagoEngine/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/njtalingting/ArchipelagoEngine/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/njtalingting/ArchipelagoEngine/graph/badge.svg?token=IKR0RKJQ86)](https://codecov.io/gh/njtalingting/ArchipelagoEngine)
 
-> *Status Update: While v0.1.1 is the current CRAN stable, v0.1.2 is now feature-complete and undergoing final technical check. It resolves critical edge cases in maritime spatial weights by integrating frequency-based cost-time features. For the most accurate modeling of the archipelagos, we recommend using the development build. Check build status and documentation on [R-Universe.](https://njtalingting.r-universe.dev/ArchipelagoEngine)*
-
 ## Overview
 Standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, standard Queen logic leaves 23 provinces (approx. 28%) orphaned, resulting in a fragmented network with only approximately 72% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran's I=0.024, p<0.05 for 'palay' price in the Philippines).
 
