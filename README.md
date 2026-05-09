@@ -4,9 +4,6 @@
 
 [![CRAN status](https://www.r-pkg.org/badges/version/ArchipelagoEngine)](https://CRAN.R-project.org/package=ArchipelagoEngine)
 [![Featured in RWeekly](https://img.shields.io/badge/Featured%20in-RWeekly%202026--W12-blue?logo=r&logoColor=white)](https://rweekly.org/2026-W12.html)
-[![DOI](https://img.shields.io/badge/DOI-10.32614/CRAN.package.ArchipelagoEngine-blue.svg)](https://doi.org/10.32614/CRAN.package.ArchipelagoEngine)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CRAN checks](https://badges.cranchecks.info/worst/ArchipelagoEngine.svg)](https://cranchecks.info/pkgs/ArchipelagoEngine)
 [![R-CMD-check](https://github.com/njtalingting/ArchipelagoEngine/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/njtalingting/ArchipelagoEngine/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/njtalingting/ArchipelagoEngine/graph/badge.svg?token=IKR0RKJQ86)](https://codecov.io/gh/njtalingting/ArchipelagoEngine)
 
