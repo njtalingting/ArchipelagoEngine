@@ -65,7 +65,7 @@ mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"
 For a deep dive into the underlying methodology— including applications of Anselin (1988) and LeSage and Pace (2009)— refer to [Case Study.](https://njtalingting.r-universe.dev/articles/ArchipelagoEngine/rtl_impact.html)
 
 ## Acknowledgment
-The development of `{ArchipelagoEngine}` is guided by the #rspatial community to ensure it meets the rigorous standards of archipelagic spatial statistics. 
+The development of `ArchipelagoEngine` is guided by the #rspatial community to ensure it meets the rigorous standards of archipelagic spatial statistics. 
 
 * **Roger Bivand**: For the foundational recommendation to integrate this engine with the broader R-spatial ecosystem (specifically `sfislands` and `spdep`).
 * **Barry Rowlingson**: For the inspiration to bridge pure geometric adjacency with real-world transport logic through `roroph`.
