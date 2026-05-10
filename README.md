@@ -67,8 +67,8 @@ For a deep dive into the underlying methodology— including applications of Ans
 ## Acknowledgment
 The development of `{ArchipelagoEngine}` is guided by the #rspatial community to ensure it meets the rigorous standards of archipelagic spatial statistics. 
 
-* **Roger Bivand**: For the foundational recommendation to integrate this engine with the broader R-spatial ecosystem (specifically `{sfislands}` and `spdep`).
-* **Barry Rowlingson**: For the inspiration to bridge pure geometric adjacency with real-world transport logic through `{roroph}`.
+* **Roger Bivand**: For the foundational recommendation to integrate this engine with the broader R-spatial ecosystem (specifically `sfislands` and `spdep`).
+* **Barry Rowlingson**: For the inspiration to bridge pure geometric adjacency with real-world transport logic through `roroph`.
 
 ## References
 Anselin, L. (1988). *Spatial Econometrics: Methods and Models*.
