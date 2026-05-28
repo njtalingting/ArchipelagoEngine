@@ -19,7 +19,7 @@ Standard spatial contiguity models often leave significant portions of island na
   <b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine k=5 (Right)</i>
 </p>
 
-* **100% Connectivity**: Ensures no island units are mathematically isolated.
+* **100% Connectivity via Sparse Matrix Topology:** Ensures no island units are mathematically isolated by constructing a regular network graph. This guarantees 100% connectivity while preserving matrix sparsity and preventing global noise.
 
 * **Automates a `listw` object:** Can be directly feed for spatial regression modeling functions from packages like `spatialreg` or `splm`.
 
@@ -42,7 +42,8 @@ library(spdep)
 # Load the benchmark map
 data(raw_data)
 
-# Calculate the new network based on the k=5 logic but you may change the parameter to fit your own research
+# NOTE: This is a proposed structural baseline that mimics latent maritime infrastructure. 
+# You can and should change the k parameter to fit the specific needs, bounds, and theory of your own research.
 weights <- build_archipelago_weight(raw_data, k = 5)
 
 # Scans the graph to see if any islands are isolated
