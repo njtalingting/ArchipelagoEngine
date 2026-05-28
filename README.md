@@ -26,14 +26,14 @@ Standard spatial contiguity models often leave significant portions of island na
 * **Built-In Geographic Data Environment:** Ships with a pre-loaded, cleaned `raw_data` shapefile of the Philippines, mapped to GADM standards.
 
 * **Neutralizes Spatial Bias:** Reduces Global Moran's I to neutralize significant residual spatial autocorrelation.
-
+  
 ## Installation
 
 ```R
 install.packages("ArchipelagoEngine")
 ```
 ## Quick Start
-The core function, 'build_archipelago_weight', bridges fragmented networks using optimized KNN logic.
+The core function, `build_archipelago_weight`, bridges fragmented networks using optimized KNN logic.
 ```R
 library(ArchipelagoEngine)
 library(sf)
@@ -59,13 +59,28 @@ plot(weights$neighbours, st_coordinates(st_centroid(raw_data)),
 mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"), 
       side = 1, line = 1, adj = 0.5, cex = 0.9, font = 1, col = "#2C3E50")
 ```
+## Further Research
+The package can be scaled to other island nations that face similar error during their analysis:
+
+<p align="center">
+  <img src="man/figures/indonesia.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
+  <br>
+  <b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine k=5 (Right)</i>
+</p>
+
+<p align="center">
+  <img src="man/figures/greece.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
+  <br>
+  <b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine k=5 (Right)</i>
+</p>
+
 ## Limitations & Recommendations
-A key limitation of 'ArchipelagoEngine' is its reliance on spatial proximity, which may force arbitrary topological connections between islands that lack real-world functional interaction. While this geometric abstraction is an inherent trade-off of the model, integrating transport data — such as the Roll-on/Roll-off (RoRo) networks in the 'roroph' package — offers a more realistic representation of maritime connectivity. 
+A key limitation of `ArchipelagoEngine` is its reliance on spatial proximity, which may force arbitrary topological connections between islands that lack real-world functional interaction. While this geometric abstraction is an inherent trade-off of the model, integrating transport data — such as the Roll-on/Roll-off (RoRo) networks in the `roroph` package — offers a more realistic representation of maritime connectivity. 
 
 However, researchers must note that RoRo networks can be endogenous to the system, shaped by the very internal economic or geographic factors the model seeks to analyze. Thus, supplementary tests such as Instrumental Variables (IV) must be conducted to control for this potential endogeneity.
 
 ## Acknowledgment
-The development of `ArchipelagoEngine` is guided by the '#rspatial' community to ensure it meets the rigorous standards of spatial econometrics:
+The development of `ArchipelagoEngine` is guided by the `#rspatial` community to ensure it meets the rigorous standards of spatial econometrics:
 
 * **Roger Bivand**: For the foundational recommendation to integrate this engine with the broader R-spatial ecosystem (specifically `sfislands` and `spdep`).
 * **Barry Rowlingson**: For the inspiration to bridge pure geometric adjacency with real-world transport logic, hence the creation of the `roroph` package.
