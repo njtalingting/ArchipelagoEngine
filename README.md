@@ -21,11 +21,9 @@ Standard spatial contiguity models often leave significant portions of island na
 
 **100% Connectivity**: Ensures no island units are mathematically isolated.
 
-**Bias Neutralization**: Reduces Moran’s I to approximately 0 (p > 0.10) to stabilize spatial spillovers.
+**Produces a compliant `listw` object:** Can be directly feed to run spatial regression modeling functions from packages like `spatialreg` or `splm`.
 
-**Structural Robustness**: Prioritizes structural integrity and randomized residuals over superficial model fit.
-
-**CRAN Verified**: Fully compatible with standard spatial regression workflows using `sf` and `spdep`.
+**Built-In Geographic Data Environment for the Philippines:** Ships with a pre-loaded, cleaned `raw_data` dataset mapped to GADM standards.
 
 ## Installation
 
