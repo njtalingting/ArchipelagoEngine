@@ -1,5 +1,5 @@
 ---
-title: "Addressing a Decade-Old 'Continental Fallacy' in Spatial Statistics"
+title: "Addressing a Decade-Old 'Continental Fallacy' in Spatial Econometrics"
 author: "NJ Talingting"
 date: "`r Sys.Date()`"
 output: 
@@ -7,7 +7,7 @@ output:
     toc: true
     number_sections: true
 vignette: >
-  %\VignetteIndexEntry{Addressing a Decade-Old 'Continental Fallacy' in Spatial Statistics}
+  %\VignetteIndexEntry{Addressing a Decade-Old 'Continental Fallacy' in Spatial Econometrics}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
