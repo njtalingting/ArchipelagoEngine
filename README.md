@@ -8,7 +8,7 @@
 [![Featured in RWeekly](https://img.shields.io/badge/Featured%20in-RWeekly%202026--W12-blue?logo=r&logoColor=white)](https://rweekly.org/2026-W12.html)
 
 ## Overview
-Standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, standard Queen logic leaves 23 provinces (approx. 28%) orphaned, resulting in a fragmented network with only approximately 72% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran's I=0.024, p<0.05 for 'palay' price in the Philippines).
+Standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, standard Queen logic leaves about 20% of Philippine provinces orphaned, resulting in a fragmented network with only approximately 72% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran's I=0.024, p<0.05 for 'palay' price in the Philippines).
 
 `ArchipelagoEngine` implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at k=5 using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented topographies, public health mapping, among other applications.
 
