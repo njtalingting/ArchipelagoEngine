@@ -10,7 +10,7 @@
 ## Overview
 Standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, standard Queen logic leaves about 20% of Philippine provinces orphaned, resulting in a fragmented network with only approximately 72% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran's I=0.024, p<0.05 for 'palay' price in the Philippines).
 
-`ArchipelagoEngine` implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at k=5 using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented topographies, public health mapping, among other applications.
+`ArchipelagoEngine` implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at k=5 using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented geographies.
 
 ## Key Features
 <p align="center">
@@ -29,13 +29,11 @@ Standard spatial contiguity models often leave significant portions of island na
 
 ## Installation
 
-You can install the released version of **ArchipelagoEngine** from [CRAN](https://CRAN.R-project.org/package=ArchipelagoEngine) with:
-
 ```R
 install.packages("ArchipelagoEngine")
 ```
 ## Quick Start
-The core function, build_archipelago_weight, bridges fragmented networks using optimized KNN logic.
+The core function, 'build_archipelago_weight', bridges fragmented networks using optimized KNN logic.
 ```R
 library(ArchipelagoEngine)
 library(sf)
@@ -44,7 +42,7 @@ library(spdep)
 # Load the benchmark map
 data(raw_data)
 
-# Calculate the new network based on the k=5 logic
+# Calculate the new network based on the k=5 logic but you may change the parameter to fit your own research
 weights <- build_archipelago_weight(raw_data, k = 5)
 
 # Scans the graph to see if any islands are isolated
@@ -61,14 +59,16 @@ plot(weights$neighbours, st_coordinates(st_centroid(raw_data)),
 mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"), 
       side = 1, line = 1, adj = 0.5, cex = 0.9, font = 1, col = "#2C3E50")
 ```
-## Documentation
-For a deep dive into the underlying methodology— including applications of Anselin (1988) and LeSage and Pace (2009)— refer to [Case Study.](https://pinasr.r-universe.dev/articles/ArchipelagoEngine/rtl_impact.html)
+## Limitations & Recommendations
+A key limitation of 'ArchipelagoEngine' is its reliance on spatial proximity, which may force arbitrary topological connections between islands that lack real-world functional interaction. While this geometric abstraction is an inherent trade-off of the model, integrating transport data — such as the Roll-on/Roll-off (RoRo) networks in the 'roroph' package — offers a more realistic representation of maritime connectivity. 
+
+However, researchers must note that RoRo networks can be endogenous to the system, shaped by the very internal economic or geographic factors the model seeks to analyze. Thus, supplementary tests such as Instrumental Variables (IV) must be conducted to control for this potential endogeneity.
 
 ## Acknowledgment
-The development of `ArchipelagoEngine` is guided by the #rspatial community to ensure it meets the rigorous standards of archipelagic spatial statistics. 
+The development of `ArchipelagoEngine` is guided by the '#rspatial' community to ensure it meets the rigorous standards of spatial econometrics:
 
 * **Roger Bivand**: For the foundational recommendation to integrate this engine with the broader R-spatial ecosystem (specifically `sfislands` and `spdep`).
-* **Barry Rowlingson**: For the inspiration to bridge pure geometric adjacency with real-world transport logic through `roroph`.
+* **Barry Rowlingson**: For the inspiration to bridge pure geometric adjacency with real-world transport logic, hence the creation of the `roroph` package.
 
 ## References
 Anselin, L. (1988). *Spatial Econometrics: Methods and Models*.
