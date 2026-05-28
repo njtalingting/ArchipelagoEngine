@@ -19,11 +19,13 @@ Standard spatial contiguity models often leave significant portions of island na
   <b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine k=5 (Right)</i>
 </p>
 
-**100% Connectivity**: Ensures no island units are mathematically isolated.
+* **100% Connectivity**: Ensures no island units are mathematically isolated.
 
-**Produces a `listw` object:** Can be directly feed for spatial regression modeling functions from packages like `spatialreg` or `splm`.
+* **Produces a `listw` object:** Can be directly feed for spatial regression modeling functions from packages like `spatialreg` or `splm`.
 
-**Built-In Geographic Data Environment:** Ships with a pre-loaded, cleaned `raw_data` shapefile of the Philippines mapped to GADM standards.
+* **Built-In Geographic Data Environment:** Ships with a pre-loaded, cleaned `raw_data` shapefile of the Philippines, mapped to GADM standards.
+
+* **Neutralizes Spatial Bias:** Reduces Global Moran's I to neutralize significant residual spatial autocorrelation.
 
 ## Installation
 
