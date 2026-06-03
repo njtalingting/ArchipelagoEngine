@@ -5,12 +5,11 @@
 [![CRAN status](https://www.r-pkg.org/badges/version/ArchipelagoEngine)](https://CRAN.R-project.org/package=ArchipelagoEngine)
 [![R-CMD-check](https://github.com/njtalingting/ArchipelagoEngine/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/njtalingting/ArchipelagoEngine/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/njtalingting/ArchipelagoEngine/graph/badge.svg?token=IKR0RKJQ86)](https://codecov.io/gh/njtalingting/ArchipelagoEngine)
-[![Featured in RWeekly under 'R in Academia'](https://img.shields.io/badge/Featured%20in%20RWeekly%20(R%20in%20Academia)-2026--W12-blue?logo=r&logoColor=white)](https://rweekly.org/2026-W12.html)
 
 ## Overview
 Standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, standard Queen logic leaves about 20% of Philippine provinces orphaned, resulting in a fragmented network with only approximately 72% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran's I=0.024, p<0.05 for 'palay' price in the Philippines).
 
-`ArchipelagoEngine` implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at k=5 using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented geographies.
+This package implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at k=5 using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented geographies.
 
 ## Key Features
 <p align="center">
@@ -43,7 +42,7 @@ library(spdep)
 data(raw_data)
 
 # NOTE: This is a proposed structural baseline that mimics latent maritime infrastructure. 
-# You can and should change the k parameter to fit the specific needs, bounds, and theory of your own research.
+# You can change the k parameter to fit the specific needs, bounds, and theory of your own research.
 weights <- build_archipelago_weight(raw_data, k = 5)
 
 # Scans the graph to see if any islands are isolated
@@ -61,7 +60,7 @@ mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"
       side = 1, line = 1, adj = 0.5, cex = 0.9, font = 1, col = "#2C3E50")
 ```
 ## Further Research
-The package can be scaled to other island nations that face similar error during their analysis:
+The package can be scaled to other island nations that face similar matrix inversion failures during their analysis:
 
 <p align="center">
   <img src="man/figures/indonesia.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
@@ -85,6 +84,7 @@ The development of `ArchipelagoEngine` is guided by the `#rspatial` community to
 
 * **Roger Bivand**: For the foundational recommendation to integrate this engine with the broader R-spatial ecosystem (specifically `sfislands` and `spdep`).
 * **Barry Rowlingson**: For the inspiration to bridge pure geometric adjacency with real-world transport logic, hence the creation of the `roroph` package.
+* **RWeekly**: For merging the [vignette](https://pinasr.r-universe.dev/articles/ArchipelagoEngine/rtl_impact.html) of this package to the `R in Academia` section during the roll-out of issue 2026- W12.
 
 ## References
 Anselin, L. (1988). *Spatial Econometrics: Methods and Models*.
