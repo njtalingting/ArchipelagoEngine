@@ -84,7 +84,7 @@ The development of `ArchipelagoEngine` is guided by the `#rspatial` community to
 
 * **Roger Bivand**: For the foundational recommendation to integrate this engine with the broader R-spatial ecosystem (specifically `sfislands` and `spdep`).
 * **Barry Rowlingson**: For the inspiration to bridge pure geometric adjacency with real-world transport logic, hence the creation of the `roroph` package.
-* **RWeekly**: For merging the [vignette](https://pinasr.r-universe.dev/articles/ArchipelagoEngine/rtl_impact.html) of this package to the `R in Academia` section during the roll-out of issue 2026- W12.
+* **RWeekly**: For merging the [vignette](https://pinasr.r-universe.dev/articles/ArchipelagoEngine/rtl_impact.html) of this package to the `R in Academia` section during the roll-out of issue 2026- W12. Thanks to Jon Calder for going over my submission and Jonathan Carroll for merging my last-minute revision.
 
 ## References
 Anselin, L. (1988). *Spatial Econometrics: Methods and Models*.
