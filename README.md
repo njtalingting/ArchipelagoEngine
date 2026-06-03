@@ -7,7 +7,7 @@
 [![codecov](https://codecov.io/gh/njtalingting/ArchipelagoEngine/graph/badge.svg?token=IKR0RKJQ86)](https://codecov.io/gh/njtalingting/ArchipelagoEngine)
 
 ## Overview
-In Spatial Econometrics, standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, the queen-Rook approach leaves about 20% of Philippine provinces orphaned, resulting in a fragmented network with only approximately 72% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran's I=0.024, p<0.05 for *palay* price in the Philippines).
+In Spatial Econometrics, standard spatial contiguity models often leave significant portions of island nations mathematically isolated. In the Philippine context, the Queen-Rook approach leaves about 20% of Philippine provinces orphaned, resulting in a fragmented network with only approximately 72% connectivity. This fragmentation introduces systematic predictive bias and significant residual spatial autocorrelation (e.g., Moran's I=0.024, p<0.05 for *palay* price in the Philippines).
 
 This package implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at k=5 using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented geographies.
 
