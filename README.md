@@ -2,9 +2,9 @@
 
 # ArchipelagoEngine: Spatial Weight Construction for Archipelagic Topographies 
 
-[![CRAN status](https://www.r-pkg.org/badges/version/ArchipelagoEngine)](https://CRAN.R-project.org/package=ArchipelagoEngine)
 [![R-CMD-check](https://github.com/njtalingting/ArchipelagoEngine/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/njtalingting/ArchipelagoEngine/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/njtalingting/ArchipelagoEngine/graph/badge.svg?token=IKR0RKJQ86)](https://codecov.io/gh/njtalingting/ArchipelagoEngine)
+[![CRAN status](https://www.r-pkg.org/badges/version/ArchipelagoEngine)](https://CRAN.R-project.org/package=ArchipelagoEngine)
 [![CRAN checks](https://badges.cranchecks.info/summary/ArchipelagoEngine.svg)](https://cran.r-project.org/web/checks/check_results_ArchipelagoEngine.html)
 
 ## Overview
