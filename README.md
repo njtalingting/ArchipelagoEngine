@@ -61,7 +61,7 @@ mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"
       side = 1, line = 1, adj = 0.5, cex = 0.9, font = 1, col = "#2C3E50")
 ```
 ## Further Research
-The package can be scaled to other island nations that face similar matrix inversion failures during their analysis piror to employing Spatial Autoregressive (SAR) or Spatial Error Model (SEM):
+The package can be scaled to other island nations that face similar matrix inversion failures during their analysis prior to employing Spatial Autoregressive (SAR) or Spatial Error Model (SEM):
 
 <p align="center">
   <img src="man/figures/indonesia.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
