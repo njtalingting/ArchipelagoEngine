@@ -35,6 +35,6 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
-X-schema.org-keywords: spatial-econometrics, archipelago, connectivity, Rcpp, 
+X-schema.org-keywords: spatial-econometrics, archipelago, connectivity, 
     philippines, maritime-logistics, island 
  
