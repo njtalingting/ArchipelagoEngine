@@ -11,23 +11,8 @@ In Spatial Econometrics, standard spatial contiguity models often leave signific
 
 This package implements specialized K-Nearest Neighbor (KNN) logic to bridge these fragmented maritime networks. By enforcing a unified grid (optimized at k=5 using the Philippines as case study), the engine achieves 100% network connectivity and neutralizes spatial bias, enabling robust econometric inference for fragmented geographies.
 
-## Key Features
-<p align="center">
-  <img src="man/figures/Connectivity_Comparison.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
-  <br>
-  <b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine k=5 (Right)</i>
-</p>
-
-* **100% Connectivity via Sparse Matrix Topology:** Ensures no island units are mathematically isolated by constructing a regular network graph. This guarantees 100% connectivity while preserving matrix sparsity and preventing global noise.
-
-* **Automates a `listw` object:** Can be directly feed for spatial regression modeling functions from packages like `spatialreg` or `splm`.
-
-* **Built-In Geographic Data Environment:** Ships with a pre-loaded, cleaned `raw_data` shapefile of the Philippines, mapped to GADM standards.
-
-* **Neutralizes Spatial Bias:** Reduces Global Moran's I to neutralize significant residual spatial autocorrelation.
-  
 ## Installation
-
+You may install the package directly to R:
 ```R
 install.packages("ArchipelagoEngine")
 ```
@@ -59,6 +44,21 @@ plot(weights$neighbours, st_coordinates(st_centroid(raw_data)),
 mtext(paste("Status: 100% Connectivity Achieved (nc =", connectivity_status, ")"), 
       side = 1, line = 1, adj = 0.5, cex = 0.9, font = 1, col = "#2C3E50")
 ```
+## Key Features
+<p align="center">
+  <img src="man/figures/Connectivity_Comparison.png" alt="ArchipelagoEngine Connectivity Comparison" width="400">
+  <br>
+  <b>Figure 1:</b> <i>Standard Queen Logic (Left) vs. ArchipelagoEngine k=5 (Right)</i>
+</p>
+
+* **100% Connectivity via Sparse Matrix Topology:** Ensures no island units are mathematically isolated by constructing a regular network graph. This guarantees 100% connectivity while preserving matrix sparsity and preventing global noise.
+
+* **Automates a `listw` object:** Can be directly feed for spatial regression modeling functions from packages like `spatialreg` or `splm`.
+
+* **Built-In Geographic Data Environment:** Ships with a pre-loaded, cleaned `raw_data` shapefile of the Philippines, mapped to GADM standards.
+
+* **Neutralizes Spatial Bias:** Reduces Global Moran's I to neutralize significant residual spatial autocorrelation.
+  
 ## Further Research
 The package can be scaled to other island nations that face similar matrix inversion failures during their analysis prior to employing Spatial Autoregressive (SAR) or Spatial Error Model (SEM):
 
